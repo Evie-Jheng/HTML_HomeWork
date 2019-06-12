@@ -1,43 +1,42 @@
-img{
+img:not(#leftimg){
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+#leftimg{
+    display: block;
+    margin-left: 20px;
+}
+
+#japanican:hover {
+    opacity: 0.7;
+}
+
 #divLeft{
-    background-color: skyblue;
+    background-color: #5CB6E7;
     position: fixed;
     width: 50%;
     left: 0;
     top: 0;
 }
 
+#dateimg {
+    padding: 30px;
+}
+
+.markimg {
+    padding: 30px;
+}
+
 #divRight{
-    background-image: url("img/bg_dot.jpg");
-    background-repeat: repeat;
-    width: 50%;
+    padding: 50px;
+    width: 40%;
     height: 90%;
 
     position: absolute;
     right: 0;
     top: 0;
-}
-
-#divRightBottom{
-
-}
-
-#introduction{
-    /* background-color: rebeccapurple; */
-    font: 12px;
-}
-
-#information{
-    /* background-color:pink; */
-}
-
-#ticket{
-    /* background-color: blue; */
 }
 
 h3{
@@ -51,15 +50,77 @@ table{
 
 table{
     border-collapse: collapse;
-    width: 60%;
+    width: 100%;
+    height: 300px;
     text-align: center;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 table, tr, td{
     border: 1px gray solid;
 }
 
+.tableFirstRow {
+    background-color: #5CB6E7;
+}
 
+p {
+    padding-top: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
 
+#ticketDetaile {
+    padding : 10px 0px;
+}
 
+#ticketDetaile p {
+    line-height: 1px;
+    font-size: 7px;
+}
 
+.buyTicket {
+    padding: 10px 0px;
+}
+
+.buyTicket p {
+    line-height: 1px;
+}
+
+#advisory{
+    padding: 10px 0px;
+}
+
+#advisory h3 p {
+    line-height: 1px;
+}
+
+#drive {
+    padding: 10px 0px;
+}
+
+#drive p {
+    line-height: 1px;
+}
+
+#partime {
+    padding:10px 0px;
+}
+
+#partime p {
+    line-height: 1px;
+    font-size: 5px;
+}
+
+#divRightBottom {
+    padding: 50px 0px;
+    width: 100%;
+    height: 8%;
+    background-color: white;
+}
+
+#divRightBottom img {
+    display: inline;
+    border: 10px 0px;
+}
