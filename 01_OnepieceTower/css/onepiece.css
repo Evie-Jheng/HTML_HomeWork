@@ -1,0 +1,65 @@
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#divLeft{
+    background-color: skyblue;
+    position: fixed;
+    width: 50%;
+    left: 0;
+    top: 0;
+}
+
+#divRight{
+    background-image: url("img/bg_dot.jpg");
+    background-repeat: repeat;
+    width: 50%;
+    height: 90%;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#divRightBottom{
+
+}
+
+#introduction{
+    /* background-color: rebeccapurple; */
+    font: 12px;
+}
+
+#information{
+    /* background-color:pink; */
+}
+
+#ticket{
+    /* background-color: blue; */
+}
+
+h3{
+    font-size: 22px;
+    text-align: center;
+}
+
+table{
+    border: 1px gray solid;
+}
+
+table{
+    border-collapse: collapse;
+    width: 60%;
+    text-align: center;
+}
+
+table, tr, td{
+    border: 1px gray solid;
+}
+
+
+
+
+
