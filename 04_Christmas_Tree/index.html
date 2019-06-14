@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <p id="startree"></p>
 
     <script>
         // 分解動作
@@ -22,6 +23,19 @@
         //    第三列：1=>1、7=>7
         //    第四列：
         // 3. 觀察星星中間位置: 中間位置 = 最終列
+        var layout = 10;
+        var tree = "";
+
+        for(var i=1; i<=layout; i++){
+            for(var j=i; j<layout; j++){
+                tree += "&ensp;";
+            }
+            for(var k=1; k<i*2; k++){
+                tree += "*";
+            }
+            tree += "<br>"; 
+        }
+        document.getElementById("startree").innerHTML = tree;
     </script>
 </body>
 
