@@ -36,40 +36,53 @@
             <tr>
                 <td><button onclick="record('0')">0</button></td>
                 <td><button onclick="record('.')">.</button></td>
-                <td><button onclick="record('=')">=</button></td>
+                <td><button onclick="cal()">=</button></td>
                 <td><button onclick="record('÷')">÷</button></td>
             </tr>
         </table>
     </div>
 
     <script>
-        let str;
-        let result;
-        let a;
+        let str = "";
+        let result = 0;
 
-        init();
-        function init() {
-            str = "";
-            result = 0;
-            a = 0;
-        }
         function record(num) {
             str += num;
             document.getElementById("answer").innerHTML = str;
-            if (a == 1) {
-                result += parseInt(num);
-                a = 0;
-            }
-            switch (num) {
+        }
+
+        function cal() {
+            let symIndex;
+            if (str.indexOf('+') != -1) {
+                symIndex = str.indexOf('+');
+            } else if (str.indexOf('-') != -1) {
+                symIndex = str.indexOf('-');
+            } else if (str.indexOf('×') != -1) {
+                symIndex = str.indexOf('×');
+            } else if (str.indexOf('÷') != -1) {
+                symIndex = str.indexOf('÷');
+            }         
+            let symbols = str.substr(symIndex, 1);
+            let firstNum = parseFloat(str.substr(0, symIndex));
+            let lastNum = parseFloat((str.substr(symIndex+1, str.length)));
+            console.log(`symbols = ${symbols}, firstnum = ${firstNum}, lastnum= ${lastNum}`);
+            switch (symbols) {
                 case '+':
-                    a = 1;
-                    result = parseInt(str);
+                    result = firstNum + lastNum;
                     break;
-                case '=':
-                    document.getElementById("answer").innerHTML = result;
-                    init();
+                case '-':
+                    result = firstNum - lastNum;
+                    break;
+                case '×':
+                    result = firstNum * lastNum;
+                    break;
+                case '÷':
+                    result = firstNum / lastNum;
                     break;
             }
+            document.getElementById("answer").innerHTML = result;
+            str = "";
+            result = 0;
         }
     </script>
 </body>
