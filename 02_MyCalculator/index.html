@@ -4,12 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <title>My Calculator</title>
+    <link rel="stylesheet" href="css/mycalculator.css">
 </head>
 
 <body>
 
-   <p><a href="https://www.desmos.com/scientific" target="_blank">參考網路上面的計算機</a></p>
-    
+    <p><a href="https://www.desmos.com/scientific" target="_blank">參考網路上面的計算機</a></p>
+    <div>
+        <table>
+            <tr>
+                <td colspan="4" id="answer"></td>
+            </tr>
+            <tr>
+                <td><button onclick="record('7')">7</button></td>
+                <td><button onclick="record('8')">8</button></td>
+                <td><button onclick="record('9')">9</button></td>
+                <td><button onclick="record('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="record('4')">4</button></td>
+                <td><button onclick="record('5')">5</button></td>
+                <td><button onclick="record('6')">6</button></td>
+                <td><button onclick="record('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="record('1')">1</button></td>
+                <td><button onclick="record('2')">2</button></td>
+                <td><button onclick="record('3')">3</button></td>
+                <td><button onclick="record('×')">×</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="record('0')">0</button></td>
+                <td><button onclick="record('.')">.</button></td>
+                <td><button onclick="record('=')">=</button></td>
+                <td><button onclick="record('÷')">÷</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let str;
+        let result;
+        let a;
+
+        init();
+        function init() {
+            str = "";
+            result = 0;
+            a = 0;
+        }
+        function record(num) {
+            str += num;
+            document.getElementById("answer").innerHTML = str;
+            if (a == 1) {
+                result += parseInt(num);
+                a = 0;
+            }
+            switch (num) {
+                case '+':
+                    a = 1;
+                    result = parseInt(str);
+                    break;
+                case '=':
+                    document.getElementById("answer").innerHTML = result;
+                    init();
+                    break;
+            }
+        }
+    </script>
 </body>
 
 </html>
